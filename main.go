@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"prac1/handlers"
+)
 
 func main() {
-	fmt.Println("qwertty")
+	http.HandleFunc("/user/recive", handlers.HandlerRecive)
+	http.ListenAndServe(":8080", nil)
+
 }
